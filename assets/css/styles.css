@@ -1,0 +1,47 @@
+/**************************** Général ****************************/
+
+.large {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.center {
+    text-align: center;
+}
+
+/**************************** EX1 ****************************/
+
+#evjs_ex1 {
+    width: 454px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#ex13_1_lb1 {
+    display: inline;
+    margin-top: 20px;
+}
+#div_ex1
+{
+    margin-bottom: 20px;;
+}
+#tb_evjs_ex1 {
+    width: 454px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+/**************************** EX2 ****************************/
+
+#evjs_ex2 {
+    width: 337px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#evjs_ex2_inp {
+    display: inline;
+    margin-top: 20px;
+}
+#evjs_ex2_op {
+    text-align: center;
+}
