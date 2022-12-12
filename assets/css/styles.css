@@ -45,3 +45,123 @@
 #evjs_ex2_op {
     text-align: center;
 }
+
+/**************************** EX3 ****************************/
+
+#evjs_ex3 {
+    width: 439px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+#evjs_ex3_inp {
+    display: inline;
+    margin-top: 20px;
+}
+#evjs_ex3_table {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**************************** EX4 ****************************/
+
+#evjs_ex4 {
+    width: 427px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#evjs_ex4_inp1 {
+    display: inline;
+    margin-top: 5px;
+    margin-left: 66px;
+}
+#evjs_ex4_inp2 {
+    display: inline;
+    margin-top: 10px;
+    margin-left: 97px;
+}
+#evjs_ex4_sb {
+    margin-top: 10px;
+    margin-left: 334px;
+}
+
+/**************************** Jarditou ****************************/
+
+#evjs_ex5 {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#evjs_ex5_fs1 {
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+}
+.w100{
+    width:100%;
+}
+.txt_red {
+    color:red;
+    display: inline;
+}
+.txt_green{
+    color:green;
+    display: inline;
+}
+#evjs_ex5_fs2{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+#evjs_ex5_fs2 input{
+    width:49%;
+    margin-bottom: 7px;
+}
+#evjs_ex5_fs2 label {
+    width: 49%;
+}
+#lblsx{
+    width: 600%;
+    margin-bottom: 10px;
+}
+#sx{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+#evjs_ex5_fs3{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+#evjs_ex5_fs3 select{
+    width:50%;
+    margin-bottom: 8px;
+}
+#evjs_ex5_fs3 label {
+    width: 49%;
+    margin-bottom: 8px;
+}
+#evjs_ex5_fs3 textarea{
+    width: 260px;
+    resize: none;
+}
+#qu_flex {
+    margin-bottom: 8px;
+}
+#accept_flex{
+    display: flex;
+    justify-content: right;
+    gap:8px;
+}
+.error{
+    width:100%;
+    margin-left:310px;
+    margin-top:-7px;
+    text-align:right;
+}

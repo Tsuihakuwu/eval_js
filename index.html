@@ -42,12 +42,89 @@
     <form id="evjs_ex3" action="">
         <fieldset>
             <legend>Recherche d'un prénom</legend>
-
+            <label class="evjs_ex3_sb1" id="evjs_ex3_lb">Quel prénom souhaitez vous supprimer ?</label>
+            <input class="evjs_ex3_sb1" type="text" id="evjs_ex3_inp" placeholder="Clément">
+            <input class="evjs_ex3_sb1" type="button" value="Envoyer" id="evjs_ex3_sb">
+            <div id="evjs_ex3_op" class="evjs_ex3_sb4"></div>
+            <div id="evjs_ex3_er" class="evjs_ex3_sb4"></div>
+        </fieldset>
+    </form>
+    <hr class="large">
+    <h2 class="center">Exercice 4</h2>
+    <form id="evjs_ex4" action="">
+        <fieldset>
+            <legend>Total d'une commande</legend>
+            <label class="evjs_ex4_sb1" id="evjs_ex4_lbpu">Prix unitaire : </label>
+            <input class="evjs_ex4_sb1" type="number" id="evjs_ex4_inp1" placeholder="100">
+            <div id="evjs_ex4_erpu"></div>
+            <label class="evjs_ex4_sb1" id="evjs_ex4_lb">Quantité : </label>
+            <input class="evjs_ex4_sb1" type="number" id="evjs_ex4_inp2" placeholder="0-100">
+            <div id="evjs_ex4_erpu"></div>
+            <input class="evjs_ex4_sb1" type="button" value="Envoyer" id="evjs_ex4_sb">
+            <div id="evjs_ex4_op" class="evjs_ex4_sb4"></div>
+        </fieldset>
+    </form>
+    <hr class="large">
+    <h2 class="center">Exercice 5</h2>
+    <form id="evjs_ex5" action="" method="POST">
+        <fieldset id="evjs_ex5_fs1">
+            <legend>
+                <h2>Formulaire Jarditou</h2>
+            </legend>
+            <p class="w100 txt_red">* Ces zones sont obligatoires</p>
+            <fieldset id="evjs_ex5_fs2" class="w100">
+                <legend>
+                    <h3>Vos coordonnées</h3>
+                </legend>
+                <label for="nom">Votre nom <div class="txt_red">*</div> : </label><input type="text" name="nom" id="nom"><br>
+                <div class="error" id="er_nom"></div>
+                <label for="prenom">Votre pr&eacute;nom <div class="txt_red">*</div> : </label><input type="text" name="prenom" id="prenom">
+                <div class="error" id="er_prenom"></div>
+                <div id="sx"><div id="lblsx">Sexe <div class="txt_red">*</div> :</div>
+                    <input type="radio" name="sexe" id="s_feminin" value="feminin" class="radio_inp" checked required><label
+                        for="s_feminin">
+                        F&eacute;minin</label>
+                    <input type="radio" name="sexe" id="s_masculin" value="masculin" class="radio_inp" required><label for="s_masculin">
+                        Masculin</label>
+                    <input type="radio" name="sexe" id="s_autre" value="autre" class="radio_inp" required><label for="s_autre">
+                        Autre</label>
+                </div>
+                <br>
+                <label for="ddn">Date de naissance <div class="txt_red">*</div> : </label><input type="date" name="ddn" id="ddn" required>
+                <div class="error" id="er_ddn"></div>
+                <label for="cp">Code postal <div class="txt_red">*</div> : </label><input type="text" name="cp" id="cp" required><br>
+                <div class="error" id="er_prenom"></div>
+                <label for="adr">Adresse : </label><input type="text" name="adr" id="adr"><br>
+                <label for="ville">Ville : </label><input type="text" name="ville" id="ville"><br>
+                <label for="email">Email <div class="txt_red">*</div> : </label><input type="email" name="email" id="email" required><br>
+            </fieldset>
+            <br>
+            <fieldset id="evjs_ex5_fs3" class="w100">
+                <legend>
+                    <h3>Votre demande</h3>
+                </legend>
+                <label for="sujet" id="lb_sujet">Sujet <div class="txt_red">*</div> : </label>
+                <select name="sujet" id="sujet">
+                    <option value="" selected disabled hidden>Veuillez sel&eacute;ctionner un sujet</option>
+                    <option value="commande">Mes commandes</option>
+                    <option value="question">Question sur un produit</option>
+                    <option value="reclam">R&eacute;clamation</option>
+                    <option value="autre">Autres</option>
+                </select><br><br>
+                <label for="question">Votre question <div class="txt_red">*</div> : </label>
+                <textarea name="question" id="question" rows="3" cols="70"></textarea>
+            </fieldset>
+            <br>
+            <div id="qu_flex" class="w100"><input type="checkbox" name="accept" id="accept" required><label for="accept"
+                    id="c_accept"> <div class="txt_red">*</div> J'accepte le traitement informatique de ce formulaire</label></div><br>
+            <div id="accept_flex" class="w100">
+                <!-- Type button pour debugage -->
+                <input type="button" value="Envoyer" class="bt" id="evjs_jarditou_sb"><input type="reset" value="Annuler" class="bt">
+            </div>
         </fieldset>
     </form>
     <hr class="large">
     <script src="assets/js/scripts.js"></script>
     </div>
 </body>
-
 </html>
