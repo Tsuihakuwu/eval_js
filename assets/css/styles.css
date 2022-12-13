@@ -150,6 +150,7 @@
 #evjs_ex5_fs3 textarea{
     width: 260px;
     resize: none;
+    margin-bottom:7px;
 }
 #qu_flex {
     margin-bottom: 8px;
@@ -161,7 +162,13 @@
 }
 .error{
     width:100%;
-    margin-left:310px;
+    margin-left:283px;
+    margin-top:-7px;
+    text-align:right;
+}
+.error_left{
+    width:100%;
+    margin-left:35px;
     margin-top:-7px;
     text-align:right;
 }

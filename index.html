@@ -93,10 +93,11 @@
                 <label for="ddn">Date de naissance <div class="txt_red">*</div> : </label><input type="date" name="ddn" id="ddn" required>
                 <div class="error" id="er_ddn"></div>
                 <label for="cp">Code postal <div class="txt_red">*</div> : </label><input type="text" name="cp" id="cp" required><br>
-                <div class="error" id="er_prenom"></div>
+                <div class="error" id="er_cp"></div>
                 <label for="adr">Adresse : </label><input type="text" name="adr" id="adr"><br>
                 <label for="ville">Ville : </label><input type="text" name="ville" id="ville"><br>
-                <label for="email">Email <div class="txt_red">*</div> : </label><input type="email" name="email" id="email" required><br>
+                <label for="email">Email <div class="txt_red">*</div> : </label><input type="text" name="email" id="email" required><br>
+                <div class="error" id="er_mail"></div>
             </fieldset>
             <br>
             <fieldset id="evjs_ex5_fs3" class="w100">
@@ -110,13 +111,16 @@
                     <option value="question">Question sur un produit</option>
                     <option value="reclam">R&eacute;clamation</option>
                     <option value="autre">Autres</option>
-                </select><br><br>
+                </select>
+                <div class="error" id="er_sujet"></div>
                 <label for="question">Votre question <div class="txt_red">*</div> : </label>
                 <textarea name="question" id="question" rows="3" cols="70"></textarea>
+                <div class="error" id="er_quest"></div>
             </fieldset>
             <br>
             <div id="qu_flex" class="w100"><input type="checkbox" name="accept" id="accept" required><label for="accept"
-                    id="c_accept"> <div class="txt_red">*</div> J'accepte le traitement informatique de ce formulaire</label></div><br>
+                    id="c_accept"> <div class="txt_red">*</div> J'accepte le traitement informatique de ce formulaire</label>
+                    <div id="er_accept"></div></div>
             <div id="accept_flex" class="w100">
                 <!-- Type button pour debugage -->
                 <input type="button" value="Envoyer" class="bt" id="evjs_jarditou_sb"><input type="reset" value="Annuler" class="bt">
