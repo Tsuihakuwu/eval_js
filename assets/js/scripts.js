@@ -36,10 +36,11 @@ var my_array_evjs_ex1 = [];
 var dynidx = 0;
 
 function sb_entry1_evjs_ex1() {
-    if (parseInt(document.getElementById("evjs_ex1_inp").value) == 0) {
-        document.getElementById('evjs_ex1_op2').innerHTML = "La valeur saisie doit être differente de zéro.";
+    if (parseInt(document.getElementById("evjs_ex1_inp").value) <= 0 || isNaN(parseInt(document.getElementById("evjs_ex1_inp").value))) {
+        document.getElementById('evjs_ex1_op2').innerHTML = "La valeur saisie doit être supérieure à zéro et être un nombre";
     }
     else if (parseInt(document.getElementById("evjs_ex1_inp").value) != 0) {
+        document.getElementById('evjs_ex1_op2').innerHTML="";
         document.getElementById('evjs_ex1_sb1').setAttribute("style", "display:none;");
         add_input_evjs_ex1();
     }
@@ -53,7 +54,7 @@ function add_input_evjs_ex1() {
         button = document.createElement('input');
         document.getElementById("evjs_ex1_op2").appendChild(label);
         var idxtmp = dynidx + 2;
-        label.innerHTML = "Entrée n°" + idxtmp + " : ";
+        label.innerHTML = "Entrée n°" + idxtmp + " :&nbsp";
         document.getElementById("evjs_ex1_op2").appendChild(input);
         document.getElementById("evjs_ex1_op2").appendChild(button);
         document.getElementById("evjs_ex1_op2").appendChild(br);
@@ -69,7 +70,7 @@ function add_input_evjs_ex1() {
         button = document.createElement('input');
         document.getElementById("evjs_ex1_op2").appendChild(label);
         var idxtmp = dynidx + 2;
-        label.innerHTML = "Entrée n°" + idxtmp + " : ";
+        label.innerHTML = "Entrée n°" + idxtmp + " :&nbsp";
         document.getElementById("evjs_ex1_op2").appendChild(input);
         document.getElementById("evjs_ex1_op2").appendChild(button);
         document.getElementById("evjs_ex1_op2").appendChild(br);
@@ -115,7 +116,7 @@ function sb_dynentry_evjs_ex1(dynidx) {
                 setAttributes(td3, { "style": "color:blue" })
                 ado++;
             }
-            else if (my_array_evjs_ex1[i] > 18 && my_array_evjs_ex1[i] <= 60) {
+            else if (my_array_evjs_ex1[i] >= 18 && my_array_evjs_ex1[i] <= 60) {
                 td3.appendChild(document.createTextNode('Adulte'));
                 setAttributes(td3, { "style": "color:green" })
                 adu++;
@@ -264,8 +265,6 @@ var pu, qtecom, tot, pap, rem, port = 0;
 function calculpap() {
     pu = parseInt(document.getElementById('evjs_ex4_inp1').value);
     qtecom = parseInt(document.getElementById('evjs_ex4_inp2').value);
-    alert
-    //if(pu==""||qtecom=="")
 
     tot = pu * qtecom;
 

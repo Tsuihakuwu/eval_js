@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
 </head>
 
-
 <body class="back">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -43,8 +42,7 @@
 
                 Donnez le programme Javascript correspondant qui affiche les résultats.<br>
             </p>
-            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
-                data-bs-target="#modalex1">Application</button>
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalex1">Application</button>
         </div>
     </div>
     <hr class="large">
@@ -110,8 +108,7 @@
                 Saisir 501 € et quantité = 1 : remise 10% (-50,1 €) soit 450,90 et frais port 2% (de 450,90 €) soit +9,01 € ; à payer : 450,90+9.01 = 459,91 €.<br>
                 Saisir 100 € et quantité = 2 : 200 € donc remise 5% soit 190 € et frais de port 2% soit 3,8 € mini 6 €; à payer : 190+6 = 196 €<br>
                 Saisir 3 € et quantité = 1 : remise 0, frais de port 2% soit 0.06 € donc le minimum de 6 € s'applique; à payer : 3+6 = 9 €</p>
-            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
-                data-bs-target="#modalex4">Application</button>
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalex4">Application</button>
         </div>
     </div>
     <hr class="large">
@@ -150,9 +147,9 @@
                     <div class="d-flex justify-content-center">
                         <form id="evjs_ex1" action="">
                             <fieldset>
-                                <legend>Exercice 1</legend>
-                                <div class="evjs_ex1_sb1" id="div_ex1">Entrez l'age de la personne : </div>
-                                <label class="evjs_ex1_sb1" id="evjs_ex1_lb1">Entrée n°1 :</label>
+                                <legend><b>Exercice 1</b></legend>
+                                <div class="evjs_ex1_sb1 w-100 p-3 text-center" id="div_ex1">Entrez l'age de la personne : </div>
+                                <label class="evjs_ex1_sb1" id="evjs_ex1_lb1">Entrée n°1 : </label>
                                 <input class="evjs_ex1_sb1" type="number" id="evjs_ex1_inp" placeholder="1-100">
                                 <input class="evjs_ex1_sb1" type="button" value="Envoyer" id="evjs_ex1_sb1">
                                 <div id="evjs_ex1_op2" class="evjs_ex1_sb2"></div>
@@ -177,11 +174,14 @@
                     <div class="d-flex justify-content-center">
 
                         <form id="evjs_ex2" action="">
+                            <fieldset>
+                                <legend><b>Exercice 2</b></legend>
+                            
                             <label class="evjs_ex2_sb1" id="evjs_ex2_lb">Quelle table souhaitez vous afficher ? </label>
                             <input class="evjs_ex2_sb1" type="text" value="" id="evjs_ex2_inp" placeholder="1-10">
                             <input class="evjs_ex2_sb1" type="button" value="Envoyer" id="evjs_ex2_sb">
                             <div id="evjs_ex2_op" class="evjs_ex2_sb2"></div>
-
+                        </fieldset>
                         </form>
 
                     </div>
@@ -201,15 +201,16 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
-                        2
+                        
                         <form id="evjs_ex3" action="">
-
+                            <fieldset>
+                                <legend><b>Exercice 3</b></legend>
                             <label class="evjs_ex3_sb1" id="evjs_ex3_lb">Quel prénom souhaitez vous supprimer ?</label>
                             <input class="evjs_ex3_sb1" type="text" id="evjs_ex3_inp" placeholder="Clément">
                             <input class="evjs_ex3_sb1" type="button" value="Envoyer" id="evjs_ex3_sb">
                             <div id="evjs_ex3_op" class="evjs_ex3_sb4"></div>
                             <div id="evjs_ex3_er" class="evjs_ex3_sb4"></div>
-
+</fieldset>
                         </form>
 
                     </div>
@@ -230,6 +231,8 @@
                 <div class="modal-body">
                     <div class="d-flex justify-content-center">
                         <form id="evjs_ex4" action="">
+                            <fieldset>
+                                <legend><b>Exercice 4</b></legend>
                             <label class="evjs_ex4_sb1" id="evjs_ex4_lbpu">Prix unitaire : </label>
                             <input class="evjs_ex4_sb1" type="number" id="evjs_ex4_inp1" placeholder="100">
                             <div id="evjs_ex4_erpu"></div>
@@ -238,6 +241,7 @@
                             <div id="evjs_ex4_erpu"></div>
                             <input class="evjs_ex4_sb1" type="button" value="Envoyer" id="evjs_ex4_sb">
                             <div id="evjs_ex4_op" class="evjs_ex4_sb4"></div>
+                            </fieldset>
                         </form>
 
                     </div>
@@ -259,25 +263,25 @@
                     <div class="col-md-10 offset-md-1 form-3-box wow fadeInUp">
 
                         <form id="evjs_ex5" action="" method="POST">
+                            
                             <fieldset id="evjs_ex5_fs1" class="form-group p-3">
                                 <p class="w100 text-danger">* Ces zones sont obligatoires</p>
                                 <fieldset id="evjs_ex5_fs2" class="form-group p-3">
                                     <legend class="w-auto px-2">
-                                        <h3>Vos coordonnées</h3>
+                                        <h5>Vos coordonnées</h5>
                                     </legend>
                                     <div class="form-group text-left">
-                                    <label for="nom" class="form-inline">Votre nom <div class="form-inline text-danger">*</div> : </label><input type="text"
-                                        name="nom" id="nom" class="form-inline">
+                                    <label for="nom" class="form-inline">Votre nom <span class="form-inline text-danger">*</span> : </label><input type="text" name="nom" id="nom" class="form-inline">
                                     <small class="error" id="er_nom"></small>
                                     </div>
                                     <div class="form-group text-left">
-                                    <label for="prenom">Votre pr&eacute;nom <div class="text-danger">*</div> :
+                                    <label for="prenom">Votre pr&eacute;nom <span class="text-danger">*</span> :
                                     </label><input type="text" name="prenom" id="prenom">
                                     <small class="error" id="er_prenom"></small>
                                     </div>
                                     <div class="form-group text-left">
                                     <div id="sx">
-                                        <div id="lblsx">Sexe <div class="text-danger">*</div> :</div>
+                                        <div id="lblsx">Sexe <span class="text-danger">*</span> : </div>
                                         <input type="radio" name="sexe" id="s_feminin" value="feminin" class="radio_inp"
                                             checked required><label for="s_feminin">
                                             F&eacute;minin</label>
@@ -290,12 +294,12 @@
                                     </div>
                                     </div>
                                     <div class="form-group text-left">
-                                    <label for="ddn">Date de naissance <div class="text-danger">*</div> : </label><input
+                                    <label for="ddn">Date de naissance <span class="text-danger">*</span> : </label><input
                                         type="date" name="ddn" id="ddn" required>
                                     <small class="error" id="er_ddn"></small>
                                 </div>
                                 <div class="form-group text-left">
-                                    <label for="cp">Code postal <div class="text-danger">*</div> : </label><input
+                                    <label for="cp">Code postal <span class="text-danger">*</span> : </label><input
                                         type="text" name="cp" id="cp" required>   
                                     <small class="error" id="er_cp"></small>
                                 </div>
@@ -303,17 +307,17 @@
                                     <label for="adr">Adresse : </label><input type="text" name="adr" id="adr"></div>
                                     <div class="form-group text-left">
                                     <label for="ville">Ville : </label><input type="text" name="ville" id="ville"></div>
-                                    <div class="form-group text-left"><label for="email">Email <div class="text-danger">*</div> : </label><input type="text"
+                                    <div class="form-group text-left"><label for="email">Email <span class="text-danger">*</span> : </label><input type="text"
                                         name="email" id="email" required>
                                     <small class="error" id="er_mail"></small></div>
                                 </fieldset>
                                 <br>
                                 <fieldset id="evjs_ex5_fs3" class="form-group p-3">
                                     <legend class="w-auto px-2">
-                                        <h3>Votre demande</h3>
+                                        <h5>Votre demande</h5>
                                     </legend>
                                     <div class="form-group text-left">
-                                    <label for="sujet" id="lb_sujet">Sujet <div class="text-danger">*</div> : </label>
+                                    <label for="sujet" id="lb_sujet">Sujet <span class="text-danger">*</span> : </label>
                                     <select name="sujet" id="sujet">
                                         <option value="" selected disabled hidden>Veuillez sel&eacute;ctionner un sujet
                                         </option>
@@ -325,22 +329,21 @@
                                     <small class="error" id="er_sujet"></small>
                                     </div>
                                     <div class="form-group text-left">
-                                    <label for="question">Votre question <div class="text-danger">*</div> : </label>
+                                    <label for="question">Votre question <span class="text-danger">*</span> : </label>
                                     <textarea name="question" id="question" rows="3" cols="70"></textarea>
                                     <small class="error" id="er_quest"></small>
                                     </div>
                                 </fieldset>
                                 <div id="qu_flex" class="w100"><input type="checkbox" name="accept" id="accept"
                                         required><label for="accept" id="c_accept">
-                                        <div class="text-danger">*</div> J'accepte le traitement informatique de ce
+                                        <span class="text-danger">*</span> J'accepte le traitement informatique de ce
                                         formulaire
                                     </label>
-                                    <div id="er_accept"></div>
+                                    <small class="error" id="er_accept"></small>
                                 </div>
                                 <div id="accept_flex" class="w100">
                                     <!-- Type button pour debugage -->
-                                    <input type="button" value="Envoyer" class="bt" id="evjs_jarditou_sb"><input
-                                        type="reset" value="Annuler" class="bt">
+                                    <input type="button" value="Envoyer" class="bt" id="evjs_jarditou_sb"><input type="reset" value="Annuler" class="bt">
                                 </div>
                             </fieldset>
                         </form>

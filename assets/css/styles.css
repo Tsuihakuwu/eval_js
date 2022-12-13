@@ -4,3 +4,6 @@
 .container{
     background-color: white;
 }
+fieldset, legend {
+    all: revert !important;
+ }
