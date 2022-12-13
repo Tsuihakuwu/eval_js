@@ -321,77 +321,76 @@ function form_valid_jarditou(myForm) {
 
     if (regex_nom.test(myForm.elements['nom'].value)) {
         document.getElementById('er_nom').innerHTML = " Veuillez entrer votre nom";
-        document.getElementById('er_nom').setAttribute("class","txt_green error");
+        document.getElementById('er_nom').setAttribute("class","text-success error");
     }
     else {
         document.getElementById('er_nom').innerHTML = " Le champ est invalide";
-        document.getElementById('er_nom').setAttribute("class","txt_red error");
+        document.getElementById('er_nom').setAttribute("class","text-danger error");
     }
 
     if (regex_nom.test(myForm.elements['prenom'].value)) {
         document.getElementById('er_prenom').innerHTML = " Veuillez entrer votre prénom";
-        document.getElementById('er_prenom').setAttribute("class","txt_green error");
+        document.getElementById('er_prenom').setAttribute("class","text-success error");
     }
     else {
         document.getElementById('er_prenom').innerHTML = " Le champ est invalide";
-        document.getElementById('er_prenom').setAttribute("class","txt_red error");
+        document.getElementById('er_prenom').setAttribute("class","text-danger error");
     }
 
     if (regex_ddn.test(myForm.elements['ddn'].value)) {
         document.getElementById('er_ddn').innerHTML = " Le champ est valide";
-        document.getElementById('er_ddn').setAttribute("class","txt_green error");
+        document.getElementById('er_ddn').setAttribute("class","text-success error");
     }
     else {
         document.getElementById('er_ddn').innerHTML = " Veuillez entrer une date de naissance valide";
-        document.getElementById('er_ddn').setAttribute("class","txt_red error");
+        document.getElementById('er_ddn').setAttribute("class","text-danger error");
         //document.getElementById('er_ddn').innerHTML = myForm.elements['ddn'].value;
     }
 
     if (regex_cp.test(myForm.elements['cp'].value)) {
         document.getElementById('er_cp').innerHTML = " Le champ est valide";
-        document.getElementById('er_cp').setAttribute("class","txt_green error");
+        document.getElementById('er_cp').setAttribute("class","text-success error");
     }
     else {
         document.getElementById('er_cp').innerHTML = " Veuillez entrer un code postal valide (Format 00000)";
-        document.getElementById('er_cp').setAttribute("class","txt_red error");
+        document.getElementById('er_cp').setAttribute("class","text-danger error");
         //document.getElementById('er_cp').innerHTML = myForm.elements['cp'].value;
     }
 
     if (regex_email.test(myForm.elements['email'].value)) {
         document.getElementById('er_mail').innerHTML = " Le champ est valide";
-        document.getElementById('er_mail').setAttribute("class","txt_green error");
+        document.getElementById('er_mail').setAttribute("class","text-success error");
     }
     else {
         document.getElementById('er_mail').innerHTML = " Veuillez entre une adresse mail valide (Format utilisateur@societe.dom)";
-        document.getElementById('er_mail').setAttribute("class","txt_red error");
+        document.getElementById('er_mail').setAttribute("class","text-danger error");
     }
 
     if(document.getElementById('sujet').value==''){
         document.getElementById('er_sujet').innerHTML = "Veuillez renseigner le sujet de votre demande";
-        document.getElementById('er_sujet').setAttribute("class","txt_red error");
+        document.getElementById('er_sujet').setAttribute("class","text-danger error");
     }
     else{
         document.getElementById('er_sujet').innerHTML = " Le champ est valide";
-        document.getElementById('er_sujet').setAttribute("class","txt_green error");
+        document.getElementById('er_sujet').setAttribute("class","text-success error");
     }
 
     if(document.getElementById('question').value==''){
         document.getElementById('er_quest').innerHTML = "Veuillez saisir votre question";
-        document.getElementById('er_quest').setAttribute("class","txt_red error");
+        document.getElementById('er_quest').setAttribute("class","text-danger error");
     }
     else{
         document.getElementById('er_quest').innerHTML = " Le champ est valide";
-        document.getElementById('er_quest').setAttribute("class","txt_green error");
+        document.getElementById('er_quest').setAttribute("class","text-success error");
     }
 
     if(!myForm.accept.checked){
         document.getElementById('er_accept').innerHTML = "Veuillez accepter le traitement informatique de ce formulaire";
-        document.getElementById('er_accept').setAttribute("class","txt_red error_left");
+        document.getElementById('er_accept').setAttribute("class","text-danger error_left");
     }
     else{
         document.getElementById('er_accept').innerHTML = "Conditions d'utilisation acceptées";
-        document.getElementById('er_accept').setAttribute("class","txt_green error_left");
+        document.getElementById('er_accept').setAttribute("class","text-success error_left");
     }
-
     return false;
 }
