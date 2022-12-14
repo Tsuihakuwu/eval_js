@@ -1,9 +1,42 @@
+/* Background */
 .back {
-    background-color: #f5c344;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23ffffff' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+    background-color: #aeb3ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23ffffff' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
 .container{
     background-color: white;
 }
-fieldset, legend {
-    all: revert !important;
- }
+/* Debug Fieldset et Legend : Impossible de trouver le paramètre de legend modifié par bootstrap qui déplace le texte sur la border du fieldset */
+/* DEBUG 2 SOLUTION : La propriété float de Legend se met sur left avec BS, il faut la reset à none !! */
+.form-3-box fieldset {
+    border: 1px dotted #000;
+    border-radius: 20px;
+}
+.form-3-box legend {
+    float:none;
+    font-weight: 4250;
+}
+/* Taille custom des modal */
+.modal-custom1{
+    max-width:581px;
+}
+.modal-custom2 {
+	max-width:805px;
+}
+.modal-custom3 {
+	max-width:834px;
+}
+.modal-custom4 {
+	max-width:510px;
+}
+.modal-custom5 {
+	max-width:805px;
+}
+/* Bricolage et mise en forme Pixel Perfect OCD*/
+#evjs_ex4_inp1 {
+	margin-left: 6px;
+}
+#question {
+    resize: none;
+    width:572px;
+}
