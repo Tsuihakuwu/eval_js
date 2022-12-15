@@ -14,7 +14,7 @@
 </head>
 
 <body class="back">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 Evaluation
@@ -22,11 +22,8 @@
             </a>
         </div>
     </nav>
-    <!-- <div class="container my-2 p-2 text-center">
-        <h1 class="center">Évaluation Javascript</h1>
-    </div> -->
-    <hr class="large">
-    <div class="card bg-secondary text-white mb-3">
+
+    <div class="container card bg-secondary text-white mb-3">
         <div class="card-body">
             <h5 class="card-title">Exercice 1</h5>
             <p>
@@ -46,8 +43,8 @@
                 data-bs-target="#modalex1">Application</button>
         </div>
     </div>
-    <hr class="large">
-    <div class="card bg-secondary text-white mb-3">
+
+    <div class="container card bg-secondary text-white mb-3">
         <div class="card-body">
             <h5 class="card-title">Exercice 2</h5>
             <p>
@@ -70,8 +67,8 @@
                 data-bs-target="#modalex2">Application</button>
         </div>
     </div>
-    <hr class="large">
-    <div class="card bg-secondary text-white mb-3">
+
+    <div class="container card bg-secondary text-white mb-3">
         <div class="card-body">
             <h5 class="card-title">Exercice 3</h5>
             <p>
@@ -93,8 +90,8 @@
                 data-bs-target="#modalex3">Application</button>
         </div>
     </div>
-    <hr class="large">
-    <div class="card bg-secondary text-white mb-3">
+
+    <div class="container card bg-secondary text-white mb-3">
         <div class="card-body">
             <h5 class="card-title">Exercice 4</h5>
             <p><b>Total d'une commande</b><br class="mb-2">
@@ -123,8 +120,8 @@
                 data-bs-target="#modalex4">Application</button>
         </div>
     </div>
-    <hr class="large">
-    <div class="card bg-secondary text-white mb-3">
+
+    <div class="container card bg-secondary text-white mb-3">
         <div class="card-body">
             <h5 class="card-title">Exercice 5</h5>
             <p>
@@ -140,9 +137,6 @@
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
                 data-bs-target="#modalex5">Application</button>
         </div>
-    </div>
-    <hr class="large">
-
     </div>
 
     <!-- MODALS -->
@@ -199,9 +193,7 @@
                                         placeholder="1-10">
                                     <input class="evjs_ex2_sb1" type="button" value="Envoyer" id="evjs_ex2_sb">
                                 </div>
-                                <div class="form-group text-center">
-                                    <div id="evjs_ex2_op" class="evjs_ex2_sb2"></div>
-                                </div>
+                                <div id="evjs_ex2_op" class="evjs_ex2_sb2 form-group text-right"></div>
                             </fieldset>
                         </form>
 
@@ -336,29 +328,28 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group text-left">
+                                    <div class="d-flex justify-content-between mt-1 w-100">
                                         <label for="ddn">Date de naissance <span class="text-danger">*</span> :
                                         </label><input type="date" name="ddn" id="ddn" required>
-                                        <div class="d-flex justify-content-end"><small class="error"
-                                                id="er_ddn"></small></div>
                                     </div>
-                                    <div class="form-group text-left">
+                                    <div class="d-flex justify-content-end"><small class="error" id="er_ddn"></small>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-1 w-100">
                                         <label for="cp">Code postal <span class="text-danger">*</span> : </label><input
                                             type="text" name="cp" id="cp" required>
-                                        <div class="d-flex justify-content-end"><small class="error" id="er_cp"></small>
-                                        </div>
                                     </div>
-                                    <div class="form-group text-left">
+                                    <div class="d-flex justify-content-end"><small class="error" id="er_cp"></small>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-1 w-100">
                                         <label for="adr">Adresse : </label><input type="text" name="adr" id="adr">
                                     </div>
-                                    <div class="form-group text-left">
+                                    <div class="d-flex justify-content-between mt-1 w-100">
                                         <label for="ville">Ville : </label><input type="text" name="ville" id="ville">
                                     </div>
-                                    <div class="form-group text-left"><label for="email">Email <span
-                                                class="text-danger">*</span> : </label><input type="text" name="email"
-                                            id="email" required>
-                                        <div class="d-flex justify-content-end"><small class="error"
-                                                id="er_mail"></small></div>
+                                    <div class="d-flex justify-content-between mt-1 w-100"><label for="email">Email
+                                            <span class="text-danger">*</span> : </label><input type="text" name="email"
+                                            id="email" required></div>
+                                    <div class="d-flex justify-content-end"><small class="error" id="er_mail"></small>
                                     </div>
                                 </fieldset>
                                 <br>
@@ -366,7 +357,7 @@
                                     <legend class="w-auto px-2">
                                         <h5>Votre demande</h5>
                                     </legend>
-                                    <div class="form-group text-left">
+                                    <div class="d-flex justify-content-left mt-1 w-100">
                                         <label for="sujet" id="lb_sujet">Sujet <span class="text-danger">*</span> :
                                         </label>
                                         <select name="sujet" id="sujet">
@@ -378,26 +369,35 @@
                                             <option value="reclam">R&eacute;clamation</option>
                                             <option value="autre">Autres</option>
                                         </select>
+                                    </div>
+                                    <div>
                                         <small class="error" id="er_sujet"></small>
                                     </div>
-                                    <div class="form-group text-left">
+
+                                    <div class="d-flex justify-content-between mt-1 w-100">
                                         <label for="question">Votre question <span class="text-danger">*</span> :
                                         </label>
+                                    </div>
+                                    <div>
                                         <textarea name="question" id="question" rows="3" cols="70"></textarea>
+                                    </div>
+                                    <div>
                                         <small class="error" id="er_quest"></small>
                                     </div>
                                 </fieldset>
-                                <div id="qu_flex" class="w100"><input type="checkbox" name="accept" id="accept"
-                                        required><label for="accept" id="c_accept">
-                                        <span class="text-danger">*</span> J'accepte le traitement informatique de ce
-                                        formulaire
-                                    </label>
+                                <div id="qu_flex" class="d-flex justify-content-start w-100 mt-2">
+                                    <input type="checkbox" name="accept" id="accept" required><label for="accept"
+                                        id="c_accept">
+                                        <span class="text-danger">&nbsp;*</span> J'accepte le traitement informatique de
+                                        ce formulaire </label>
+                                </div>
+                                <div>
                                     <small class="error" id="er_accept"></small>
                                 </div>
-                                <div id="accept_flex" class="w100">
+                                <div id="accept_flex" class="d-flex justify-content-end">
                                     <!-- Type button pour debugage -->
-                                    <input type="button" value="Envoyer" class="bt" id="evjs_jarditou_sb"><input
-                                        type="reset" value="Annuler" class="bt">
+                                    <input type="button" value="Envoyer" class="" id="evjs_jarditou_sb"><input
+                                        type="reset" value="Annuler" class="ml-5">
                                 </div>
                             </fieldset>
                         </form>

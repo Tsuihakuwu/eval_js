@@ -18,8 +18,8 @@ function setAttributes(el, attrs) {
 }
 
 //ne pas submit avec la touche enter pour tout les exercices
-document.onkeydown=function(){
-    if(window.event.keyCode=='13'){
+document.onkeydown = function () {
+    if (window.event.keyCode == '13') {
         return false;
     }
 }
@@ -44,10 +44,16 @@ var dynidx = 0;
 
 function sb_entry1_evjs_ex1() {
     if (parseInt(document.getElementById("evjs_ex1_inp").value) <= 0 || isNaN(parseInt(document.getElementById("evjs_ex1_inp").value))) {
-        document.getElementById('evjs_ex1_op2').innerHTML = "La valeur saisie doit être supérieure à zéro et être un nombre";
+        document.getElementById('evjs_ex1_op2').innerHTML = "<small>La valeur saisie doit être supérieure à zéro et être un nombre</small>";
+        document.getElementById('evjs_ex1_op2').setAttribute('class', 'text-danger text-center');
+    }
+    else if (parseInt(document.getElementById("evjs_ex1_inp").value) >= 100) {
+        document.getElementById('evjs_ex1_op2').innerHTML = "<small>La valeur saisie doit être inférieure à cent</small>";
+        document.getElementById('evjs_ex1_op2').setAttribute('class', 'text-danger text-center');
     }
     else if (parseInt(document.getElementById("evjs_ex1_inp").value) != 0) {
-        document.getElementById('evjs_ex1_op2').innerHTML="";
+        document.getElementById('evjs_ex1_op2').setAttribute('class', 'text-dark');
+        document.getElementById('evjs_ex1_op2').innerHTML = "";
         document.getElementById('evjs_ex1_sb1').setAttribute("style", "display:none;");
         add_input_evjs_ex1();
     }
@@ -99,7 +105,7 @@ function sb_dynentry_evjs_ex1(dynidx) {
         display_switch("evjs_ex1_sb1", "");
         var arrayLength_evjs_ex1 = my_array_evjs_ex1.length;
         var table_evjs_ex1 = document.createElement('table');
-        setAttributes(table_evjs_ex1, { "id": "tb_evjs_ex1","class":"table"})
+        setAttributes(table_evjs_ex1, { "id": "tb_evjs_ex1", "class": "table" })
         var en = 0;
         var ado = 0;
         var adu = 0;
@@ -182,11 +188,19 @@ function sb_dynentry_evjs_ex1(dynidx) {
 evjs_ex2_sb.addEventListener("click", function () { evjs_ex2(parseInt(document.getElementById('evjs_ex2_inp').value)) });
 
 function evjs_ex2(inp_table) {
-    document.getElementById("evjs_ex2_op").innerHTML = "";
-    var n = inp_table;
-    for (var i = 1; i - 1 < 10; i++) {
-        let res = i * n;
-        document.getElementById("evjs_ex2_op").innerHTML = document.getElementById("evjs_ex2_op").innerHTML + "<br/>" + n + " " + " x " + " " + i + " = " + res;
+    if (isNaN(parseInt(document.getElementById('evjs_ex2_inp').value))) {
+        document.getElementById("evjs_ex2_op").innerHTML = "";
+        document.getElementById("evjs_ex2_op").innerHTML = "<small>Erreur : L'entrée n'est pas un numérique</small>";
+        setAttributes(document.getElementById("evjs_ex2_op"),{'class':'text-danger'});
+    }
+    else {
+        document.getElementById("evjs_ex2_op").innerHTML = "";
+        var n = inp_table;
+        setAttributes(document.getElementById("evjs_ex2_op"),{'class':'text-dark text-center'});
+        for (var i = 1; i - 1 < 10; i++) {
+            let res = i * n;
+            document.getElementById("evjs_ex2_op").innerHTML = document.getElementById("evjs_ex2_op").innerHTML + "<br/>" + n + " " + " x " + " " + i + " = " + res;
+        }
     }
 }
 
@@ -223,7 +237,7 @@ function aff_tab() {
         setAttributes(tr, { "id": "tr" + i });
         document.getElementById("evjs_ex3_op").appendChild(table_evjs_ex3);
     }
-    setAttributes(table_evjs_ex3, { "border": "2", "width": "249px", "id": "evjs_ex3_table","class":"table my-3"});
+    setAttributes(table_evjs_ex3, { "border": "2", "width": "249px", "id": "evjs_ex3_table", "class": "table my-3" });
 }
 
 function tb3_supp() {
@@ -271,16 +285,26 @@ var pu, qtecom, tot, pap, rem, port = 0;
 
 function calculpap() {
 
-    document.getElementById('evjs_ex4_erpu').innerHTML="";
-    document.getElementById('evjs_ex4_erqt').innerHTML="";
+    document.getElementById('evjs_ex4_erpu').innerHTML = "";
+    document.getElementById('evjs_ex4_erqt').innerHTML = "";
 
     //Gestion exception NaN dans les champs
-    if(isNaN(parseInt(document.getElementById('evjs_ex4_inp1').value))||isNaN(parseInt(document.getElementById('evjs_ex4_inp2').value))){
-       if(isNaN(parseInt(document.getElementById('evjs_ex4_inp1').value))){
-            document.getElementById('evjs_ex4_erpu').innerHTML="Veuillez entrer un prix valide";
+    if (isNaN(parseInt(document.getElementById('evjs_ex4_inp1').value)) || isNaN(parseInt(document.getElementById('evjs_ex4_inp2').value))) {
+        if (isNaN(parseInt(document.getElementById('evjs_ex4_inp1').value))) {
+            document.getElementById('evjs_ex4_erpu').innerHTML = "Veuillez entrer un prix valide";
         }
-        if(isNaN(parseInt(document.getElementById('evjs_ex4_inp2').value))){
-        document.getElementById('evjs_ex4_erqt').innerHTML="Veuillez entrer une quantité valide";
+        if (isNaN(parseInt(document.getElementById('evjs_ex4_inp2').value))) {
+            document.getElementById('evjs_ex4_erqt').innerHTML = "Veuillez entrer une quantité valide";
+        }
+        return false;
+    }
+    //Gestion exception 0 dans les champs
+    if (parseInt(document.getElementById('evjs_ex4_inp2').value)==0 || parseInt(document.getElementById('evjs_ex4_inp1').value)==0) {
+        if (parseInt(document.getElementById('evjs_ex4_inp1').value)==0) {
+            document.getElementById('evjs_ex4_erpu').innerHTML = "Veuillez entrer un prix valide";
+        }
+        if (parseInt(document.getElementById('evjs_ex4_inp2').value)==0) {
+            document.getElementById('evjs_ex4_erqt').innerHTML = "Veuillez entrer une quantité valide";
         }
         return false;
     }
@@ -328,88 +352,95 @@ function calculpap() {
 //Event listener
 evjs_jarditou_sb.addEventListener("click", function () { form_valid_jarditou(document.getElementById('evjs_ex5')) });
 
-function tored(id){document.getElementById(id).setAttribute('style','color:red')}
+function tored(id) { document.getElementById(id).setAttribute('style', 'color:red') }
 
-function togreen(id){document.getElementById(id).setAttribute('style','color:green')}
+function togreen(id) { document.getElementById(id).setAttribute('style', 'color:green') }
 
 function form_valid_jarditou(myForm) {
 
     regex_nom = /[a-zA-Z]/g;
     regex_prenom = regex_nom;
     regex_ddn = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
-    regex_cp = /\b\d{5}\b/g;
+    regex_cp = /^(?:0[1-9]|[1-8]\d|9[0-8])\d{3}$/ //Remplacé par un meilleur regex qui filtre uniquement les format code postaux valide en France (01 à 98)
     regex_email = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
     if (regex_nom.test(myForm.elements['nom'].value)) {
         document.getElementById('er_nom').innerHTML = "Le champ est valide";
-        document.getElementById('er_nom').setAttribute("class","text-success error");
+        document.getElementById('er_nom').setAttribute("class", "text-success error");
     }
     else {
         document.getElementById('er_nom').innerHTML = "Veuillez entrer votre nom";
-        document.getElementById('er_nom').setAttribute("class","text-danger error");
+        document.getElementById('er_nom').setAttribute("class", "text-danger error");
     }
 
     if (regex_nom.test(myForm.elements['prenom'].value)) {
         document.getElementById('er_prenom').innerHTML = " Le champ est valide";
-        document.getElementById('er_prenom').setAttribute("class","text-success error");
+        document.getElementById('er_prenom').setAttribute("class", "text-success error");
     }
     else {
         document.getElementById('er_prenom').innerHTML = " Veuillez entrer votre prénom";
-        document.getElementById('er_prenom').setAttribute("class","text-danger error");
+        document.getElementById('er_prenom').setAttribute("class", "text-danger error");
     }
 
     if (regex_ddn.test(myForm.elements['ddn'].value)) {
         document.getElementById('er_ddn').innerHTML = " Le champ est valide";
-        document.getElementById('er_ddn').setAttribute("class","text-success error");
+        document.getElementById('er_ddn').setAttribute("class", "text-success error");
     }
     else {
         document.getElementById('er_ddn').innerHTML = " Veuillez entrer une date de naissance valide";
-        document.getElementById('er_ddn').setAttribute("class","text-danger error");
+        document.getElementById('er_ddn').setAttribute("class", "text-danger error");
+    }
+    //Contrôle si la date est supérieur à aujourd'hui pour erreur
+    var startDate = Date.parse(document.getElementById('ddn').value);
+    var today = new Date();
+    if (!isNaN(startDate) && startDate > today.getTime()) {
+        document.getElementById('er_ddn').innerHTML = " Veuillez entrer une date de naissance valide";
+        document.getElementById('er_ddn').setAttribute("class", "text-danger error");
     }
 
     if (regex_cp.test(myForm.elements['cp'].value)) {
         document.getElementById('er_cp').innerHTML = " Le champ est valide";
-        document.getElementById('er_cp').setAttribute("class","text-success error");
+        document.getElementById('er_cp').setAttribute("class", "text-success error");
     }
     else {
         document.getElementById('er_cp').innerHTML = " Veuillez entrer un code postal valide (Format 00000)";
-        document.getElementById('er_cp').setAttribute("class","text-danger error");
+        document.getElementById('er_cp').setAttribute("class", "text-danger error");
     }
 
     if (regex_email.test(myForm.elements['email'].value)) {
         document.getElementById('er_mail').innerHTML = " Le champ est valide";
-        document.getElementById('er_mail').setAttribute("class","text-success error");
+        document.getElementById('er_mail').setAttribute("class", "text-success error");
     }
     else {
         document.getElementById('er_mail').innerHTML = " Veuillez entre une adresse mail valide (Format utilisateur@societe.dom)";
-        document.getElementById('er_mail').setAttribute("class","text-danger error");
+        document.getElementById('er_mail').setAttribute("class", "text-danger error");
     }
 
-    if(document.getElementById('sujet').value==''){
+    if (document.getElementById('sujet').value == '') {
         document.getElementById('er_sujet').innerHTML = "Veuillez renseigner le sujet de votre demande";
-        document.getElementById('er_sujet').setAttribute("class","text-danger error");
+        document.getElementById('er_sujet').setAttribute("class", "text-danger error");
     }
-    else{
+    else {
         document.getElementById('er_sujet').innerHTML = " Le champ est valide";
-        document.getElementById('er_sujet').setAttribute("class","text-success error");
+        document.getElementById('er_sujet').setAttribute("class", "text-success error");
     }
 
-    if(document.getElementById('question').value==''){
+    if (document.getElementById('question').value == '') {
         document.getElementById('er_quest').innerHTML = "Veuillez saisir votre question";
-        document.getElementById('er_quest').setAttribute("class","text-danger error");
+        document.getElementById('er_quest').setAttribute("class", "text-danger error");
     }
-    else{
+    else {
         document.getElementById('er_quest').innerHTML = " Le champ est valide";
-        document.getElementById('er_quest').setAttribute("class","text-success error");
+        document.getElementById('er_quest').setAttribute("class", "text-success error");
     }
 
-    if(!myForm.accept.checked){
+    if (!myForm.accept.checked) {
         document.getElementById('er_accept').innerHTML = "Veuillez accepter le traitement informatique de ce formulaire";
-        document.getElementById('er_accept').setAttribute("class","text-danger error_left");
+        document.getElementById('er_accept').setAttribute("class", "text-danger error_left");
     }
-    else{
+    else {
         document.getElementById('er_accept').innerHTML = "Conditions d'utilisation acceptées";
-        document.getElementById('er_accept').setAttribute("class","text-success error_left");
+        document.getElementById('er_accept').setAttribute("class", "text-success error_left");
     }
     return false;
 }
